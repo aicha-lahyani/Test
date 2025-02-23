@@ -1,0 +1,77 @@
+Index: biblio.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def afficher_menu():\n    print(\"\\n\uD83D\uDCDA --- Menu Bibliothèque ---\")\n    print(\"1\uFE0F⃣ Ajouter un livre\")\n    print(\"2\uFE0F⃣ Afficher les livres\")\n    print(\"3\uFE0F⃣ Rechercher un livre\")\n    print(\"4\uFE0F⃣ Emprunter un livre\")\n    print(\"5\uFE0F⃣ Retourner un livre\")\n    print(\"6\uFE0F⃣ Supprimer un livre\")\n    print(\"7\uFE0F⃣ Quitter et sauvegarder\")\n\ndef main():\n    biblio = Bibliotheque()\n    biblio.charger()\n\n    while True:\n        afficher_menu()\n        choix = input(\"➡\uFE0F Votre choix : \")\n\n        if choix == \"1\":\n            titre = input(\"\uD83D\uDCD6 Titre : \")\n            auteur = input(\"✍\uFE0F Auteur : \")\n            annee = input(\"\uD83D\uDCC5 Année de publication : \")\n            biblio.ajouter_livre(titre, auteur, annee)\n\n        elif choix == \"2\":\n            biblio.afficher_livres()\n\n        elif choix == \"3\":\n            titre = input(\"\uD83D\uDD0D Titre à rechercher : \")\n            biblio.rechercher_livre(titre)\n\n        elif choix == \"4\":\n            id_livre = int(input(\"\uD83D\uDCD6 ID du livre à emprunter : \"))\n            biblio.emprunter_livre(id_livre)\n\n        elif choix == \"5\":\n            id_livre = int(input(\"\uD83D\uDCDA ID du livre à retourner : \"))\n            biblio.retourner_livre(id_livre)\n\n        elif choix == \"6\":\n            id_livre = int(input(\"\uD83D\uDDD1\uFE0F ID du livre à supprimer : \"))\n            biblio.supprimer_livre(id_livre)\n\n        elif choix == \"7\":\n            biblio.sauvegarder()\n            print(\"\uD83D\uDC4B Fin du programme.\")\n            break\n\n        else:\n            print(\"⚠\uFE0F Choix invalide, réessayez.\")\n\nif name == \"main\":\n    main()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/biblio.py b/biblio.py
+--- a/biblio.py	(revision ba377bd0882115ea2cee77d9f3393994f0dfdd44)
++++ b/biblio.py	(date 1740340081078)
+@@ -20,6 +20,7 @@
+             titre = input("📖 Titre : ")
+             auteur = input("✍️ Auteur : ")
+             annee = input("📅 Année de publication : ")
++             merde = input("📅 Année de publication : ")
+             biblio.ajouter_livre(titre, auteur, annee)
+ 
+         elif choix == "2":
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1740339962517)
++++ b/.idea/vcs.xml	(date 1740339962517)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1740339911322)
++++ b/.idea/.gitignore	(date 1740339911322)
+@@ -0,0 +1,13 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Rider ignored files
++/contentModel.xml
++/projectSettingsUpdater.xml
++/modules.xml
++/.idea.Test1.iml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/indexLayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/indexLayout.xml b/.idea/indexLayout.xml
+new file mode 100644
+--- /dev/null	(date 1740339962506)
++++ b/.idea/indexLayout.xml	(date 1740339962506)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="UserContentModel">
++    <attachedFolders />
++    <explicitIncludes />
++    <explicitExcludes />
++  </component>
++</project>
+\ No newline at end of file
