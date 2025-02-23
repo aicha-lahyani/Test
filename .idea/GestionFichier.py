@@ -22,3 +22,9 @@ class GestionFichier:
         except Exception as e:
             print("❌ Erreur lors du chargement :", e)
             return []
+        except FileNotFoundError:
+            print("🔄 Aucune donnée trouvée.")
+            return []
+        except Exception as e:
+            print("❌ Erreur lors du chargement :", e)
+            return []
